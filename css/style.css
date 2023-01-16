@@ -1,0 +1,133 @@
+/* Aqui se coloca a folha de estilo da página (formatações) */
+
+seletor{propriedade:valor;
+/* SELETOR chave de quem eu quero selecionar para formatar */
+}
+
+
+:root {
+/* root é o seletor para vc definir variáveis dentro do css */
+--cor:blue;
+--cor_primaria:#225C72;
+--cor_secundaria:#162C41;
+--cor_font:#666666;
+--cor_fundo:#EEEEEE;
+--cor_titulo:#162C41;
+--cor_preferencia:aquamarine;
+/* pode definir qualquer nome e chamar a variavel, exemplo espaço, cor, margim, imagem, etc... */
+}
+
+
+body{
+    height: 100vh; /*100vh = 100% da altura da tela*/
+    /* aqui defini a altura (height) do body para que o gradiente fique adequado a página */
+    margin: 0;
+    /* margim-top seria só a parte de cima e margin seria todos os lados */
+    background-color:aquamarine;
+    /* cor de fundo da página */
+    /* se for imagem faz assim
+    background-image: url(../img/nome da imagem e extensão) */
+    background-image: linear-gradient(var(--cor_primaria),var(--cor_secundaria));
+    /* aqui formatei o fundo do projeto com degrade */
+    /* Repare que aqui ele assumiu a cor desse ultimo background-color... */
+    font-family: 'Roboto', sans-serif;
+    /* padronização geral da fonte quando está no body.  se tivesse no h1 iria padronizar só o h1 */
+    overflow: hidden; /*escondendo a barra de rolagem*/
+}
+
+    #principal{ /*aqui peguei a div principal direcionando as margens.  se ão tivesse mais de uma div poderia ser só div*/
+    width: 70%; /*largura*/
+    max-width:340px; /*largura máxima considerando padding de ambos os lados = 400*/
+    height:auto;/*altura*/
+    background-color: var(--cor_fundo);
+    margin: 50px auto;
+    padding: 30px; /*padding significa margem pra dentro.  se for para fora é margim */
+    text-align: center; /*alinhando texto no centro da div*/
+    border-radius: 10px; /* formatando borda arredondada*/
+    }
+
+    img{
+        width: 100px; /*reduzindo tamanho*/
+        border-radius: 50%; /*colocando redondo*/
+        border: solid 5px var(--cor_primaria);
+        /*abaixo segue o código detalhado.  Acima segue ele resumido*/
+        /* border-width: 5px;
+        border-color: var(--cor_primaria);
+        border: solid; */
+    }
+  
+h1{
+    color:var(--cor_titulo);
+    /* cor */
+    /* text-decoration:underline; = sublinhado */
+    font-size: 32px;
+    /* tamanho da fonte do h1 */
+    /* font-weight: 700; seria o peso mas já vem bold nativo no h1*/
+    margin-top: 20px;
+    margin-bottom:0;
+}
+
+h2{
+color:var(--cor_primaria);
+font-size: 20px;
+margin-top: 0;
+margin-bottom: 0;
+}
+
+p{
+margin-top: 10px;
+color:var(--cor_font);
+}
+
+li{
+    margin-bottom: 5px;
+}
+
+ul{
+padding: 0;
+list-style-type: none;
+margin-top: 0;
+/* background-color: red; */
+
+}
+
+ol{
+    padding: 0;
+    list-style-type: none;
+    margin-top: 0;
+}
+
+ul li a{ /* elemento pai ul ou li para separar do a, especificando...*/
+background-color: var(--cor_primaria);
+display: block;
+color: var(--cor_fundo);
+text-decoration: none;
+padding-top: 10px; /*acima*/
+padding-bottom: 10px; /*abaixo*/
+/*ou então padding: 10px 0; */
+border-radius: 3px;
+}
+
+a:hover {
+background-color: var(--cor_secundaria);
+}
+
+#app{
+    display:none;
+}
+
+@media (max-width:2000px) {
+/*função para ficar responsivo e se ajustar a tela, neste caso se ajusta quando for 1279px*/
+/*ajusta tudo que eu colocar mais abaixo chamando a função, exemplo body div h1...*/
+
+    #app{
+        display: block;
+        /*aqui coloquei para aparecer p display que foi sinalizado no html como id app*/
+    }
+
+    body{
+        overflow: auto;
+        /*aqui habilitei a barra de rolagem conforme tamanho da tela*/
+    }
+
+}

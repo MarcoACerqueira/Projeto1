@@ -1,0 +1,12 @@
+Figma
+Visual studio code
+Extensão Dracula e material icon teme (setar como padrão após instalar)
+
+Turbocloud
+DigitalOcean
+
+W3C padroniza a Web
+Validator, colocando o site já valida se está ou não ok.
+
+
+
